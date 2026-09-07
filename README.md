@@ -21,9 +21,9 @@ Make input and output contracts explicit. Separate deterministic processing from
 
 **What I built:** An eight-stage audit pipeline combining deterministic extraction and LLM reasoning, with specifications, gates and checks at every stage.
 
-**Engineering highlights:** Guardrails against unsupported claims, Ed25519 report attestation, 4300+ automated tests and report generation in six languages. Used for real paid audits.
+**Engineering highlights:** A real strict-production run completed 108/108 model responses across four providers; claim gates produced 0 unsupported and 0 forbidden claims. The private suite currently records 4,308 passed and 12 skipped tests. Client reports support six output languages; this run measured Dutch.
 
-**Evidence:** [Commercial system case study](portfolio/aivs-case-study/README.md), [architecture](portfolio/aivs-case-study/ARCHITECTURE.md) and [testing](portfolio/aivs-case-study/TESTING.md). These are owner-confirmed facts about the private system; its implementation and test suite are not public.
+**Evidence:** [Commercial system case study](portfolio/aivs-case-study/README.md), [sanitized production sample](portfolio/aivs-case-study/sample/README.md), [provenance](portfolio/aivs-case-study/PROVENANCE.md), [architecture](portfolio/aivs-case-study/ARCHITECTURE.md) and [testing](portfolio/aivs-case-study/TESTING.md). The implementation remains private; the public package exposes sanitized metrics, validation outcomes and hashes.
 
 ### AI Accountant Orchestra — configurable transaction processing
 

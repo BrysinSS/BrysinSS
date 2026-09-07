@@ -41,7 +41,7 @@ The only executable source change is optional Unpaywall configuration. Tax calcu
 | Python | All source files parsed with ast.parse |
 | GitHub Actions YAML | Parsed statically; main push/PR triggers, Python 3.11, dependency install and pytest step inspected |
 | Markdown | Local file links and internal anchors checked across tracked Markdown and new profile files; malformed guide fences corrected |
-| Placeholder scan | No generic template markers in reviewed Markdown. Intentional USER_ACTION_REQUIRED and NEEDS_USER_CONFIRMATION markers remain. Existing implementation stubs remain explicitly documented |
+| Placeholder scan | No generic template markers remain in the reviewed portfolio Markdown. Existing implementation stubs in project code remain explicitly documented |
 
 The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/19346772591) succeeded on 13 November 2025. After this update, hosted CI also **passed** for commit `52106b32b94003b95ef504f778f5d3f6743c2cca`: [run 34140230539](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/34140230539).
 
@@ -73,7 +73,7 @@ The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/
 | Approximately eight years independently running a manufacturing business | Already confirmed by the owner |
 | Public-safe stage names, detailed gate criteria and signed-payload verification procedure | NEEDS_USER_CONFIRMATION before adding |
 | Exact six report languages, current test count/date/revision and sanitized test summary | NEEDS_USER_CONFIRMATION before expanding evidence |
-| Sanitized commercial audit report | USER_ACTION_REQUIRED: add sanitized example report |
+| Sanitized commercial audit report | Completed: public AIVS sample includes JSON summaries, validated HTML derivatives, two re-rendered PDFs and a SHA-256 manifest |
 | Email, LinkedIn, phone, location, work authorization, dates, business name and education | NEEDS_USER_CONFIRMATION; omitted from public claims |
 | Language levels | NEEDS_USER_CONFIRMATION; no levels supplied, added or changed |
 | Production readiness, measured impact, revenue, client names, coverage percentages, continuous delivery deployments | Unverified; deliberately not claimed |

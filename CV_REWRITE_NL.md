@@ -15,11 +15,12 @@ Ik bouw automatiseringssystemen met Python, API's, n8n en LLM-integraties. Mijn 
 
 - Een geautomatiseerde auditpipeline met acht fasen gebouwd, met specificaties, validatiepoorten en controles in elke fase.
 - Deterministische extractie gecombineerd met LLM-redenering.
-- Controles ingebouwd die claims zonder meetbare onderbouwing blokkeren, met Ed25519-attestatie van rapporten.
-- Een systeem ontwikkeld met meer dan 4300 geautomatiseerde tests en rapportage in zes talen.
-- Het systeem gebruikt voor daadwerkelijk betaalde audits.
+- Bewijsgerichte controles voor claims en Ed25519-attestatie van auditpakketten geïmplementeerd, waarbij aanwezigheid en verificatie van de handtekening afzonderlijk worden gerapporteerd.
+- De privésuite geverifieerd: 4.308 geslaagd, 12 overgeslagen en 0 mislukte tests (4.320 verzameld; september 2026).
+- Een audit in `strict_production` uitgevoerd met 27 Nederlandse zoekvragen en vier modelproviders: 108/108 geldige antwoorden en 0 niet-onderbouwde of verboden claims in het eindpakket.
+- Rapportuitvoer in zes talen gebouwd; de gedocumenteerde productiecase mat Nederlands en leverde gevalideerde Nederlandse en Russische artefacten.
 
-[Praktijkbeschrijving](portfolio/aivs-case-study/README.md). De implementatie is privé; deze feiten zijn door de eigenaar bevestigd. De openbare bestanden verifiëren het aantal tests van het privésysteem niet onafhankelijk.
+[Praktijkbeschrijving](portfolio/aivs-case-study/README.md) · [geanonimiseerd productievoorbeeld](portfolio/aivs-case-study/sample/README.md) · [testresultaat](portfolio/aivs-case-study/TESTING.md). De implementatie blijft privé; het openbare bewijs bevat meetresultaten, Stage H-validatie en herkomsthashes.
 
 ### AI Accountant Orchestra — transactieverwerking in Python
 

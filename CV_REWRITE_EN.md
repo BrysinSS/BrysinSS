@@ -15,11 +15,12 @@ I build automation systems using Python, APIs, n8n and LLM integrations, with an
 
 - Built an automated eight-stage audit pipeline with specifications, gates and checks at every stage.
 - Combined deterministic extraction with LLM reasoning.
-- Implemented guardrails that block claims without measurable foundations and Ed25519 report attestation.
-- Developed a system with 4300+ automated tests and report generation in six languages.
-- Used the system for real paid audits.
+- Implemented evidence-based claim gates and Ed25519 package attestation, with signature presence and verification reported separately.
+- Verified the private suite at 4,308 passed, 12 skipped and 0 failed tests (4,320 collected; September 2026).
+- Delivered a strict-production audit across 27 Dutch queries and four model providers: 108/108 valid responses, with 0 unsupported and 0 forbidden claims in the final package.
+- Built client report output for six languages; the documented production sample measured Dutch and produced validated Dutch and Russian artifacts.
 
-[Case study](portfolio/aivs-case-study/README.md). The implementation is private; these facts are confirmed by the owner. Public artifacts do not independently verify the private test count.
+[Case study](portfolio/aivs-case-study/README.md) · [sanitized production sample](portfolio/aivs-case-study/sample/README.md) · [test record](portfolio/aivs-case-study/TESTING.md). The implementation remains private; the public evidence includes run metrics, Stage H validation and provenance hashes.
 
 ### AI Accountant Orchestra — Python transaction processing
 
