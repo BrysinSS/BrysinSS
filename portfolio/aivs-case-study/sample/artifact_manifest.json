@@ -1,0 +1,51 @@
+{
+  "schema": "aivs_public_artifact_manifest/v1",
+  "sample_id": "aivs-production-sample-20260626",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1941,
+      "sha256": "63cfeb2fd6cdb9fbf47d208d27c64fc1e6e7da2b93406184f308eaed86837a11"
+    },
+    {
+      "path": "sample_audit_presentation.pdf",
+      "bytes": 7868,
+      "sha256": "858c34fa618193d39279e3289c9fa63c5bd23e74a60516e09fda751cfe58888f"
+    },
+    {
+      "path": "sample_audit_summary.json",
+      "bytes": 1811,
+      "sha256": "c3b471d44d40c066659d8553e92e262963d945a4827fc11066aeca89a4cff209"
+    },
+    {
+      "path": "sample_checklist.html",
+      "bytes": 3421,
+      "sha256": "fd1a1545703f103cb8f3a4a1311e1cb7eff2567808d70d5f3dcf6ec3287fd523"
+    },
+    {
+      "path": "sample_claim_verification.json",
+      "bytes": 636,
+      "sha256": "552b04483e677bd746ee74d8559e8dcc5fe18188b2621f939bddd2de412b8d2c"
+    },
+    {
+      "path": "sample_implementation_checklist.pdf",
+      "bytes": 5756,
+      "sha256": "2dbdac1ee20e64f37ab8cd6877d4f560b91d9caed8b180d1f2e0efdb08715a08"
+    },
+    {
+      "path": "sample_metrics.json",
+      "bytes": 2994,
+      "sha256": "7646d95cfcc699b69891a6d14ee75ad35e43489e8a624106a29203d7ad29460e"
+    },
+    {
+      "path": "sample_presentation.html",
+      "bytes": 4668,
+      "sha256": "7f9fd439f898c026361b0816f5361a7989f8d289161efa905afd8cb139a771ba"
+    },
+    {
+      "path": "sample_stage_h_validation.json",
+      "bytes": 1051,
+      "sha256": "c9c012e57c885395a295cbec7b3f6d9b0887b1ddb0cc0d8acec918bc8505ad15"
+    }
+  ]
+}

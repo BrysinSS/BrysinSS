@@ -1,0 +1,102 @@
+{
+  "schema": "aivs_public_sample_metrics/v1",
+  "sample_id": "aivs-production-sample-20260626",
+  "disclosure": "Sanitized from a real production audit. Identifying business information and competitor names were removed; retained numeric engineering metrics are unchanged unless explicitly noted.",
+  "basis": {
+    "queries": 27,
+    "valid_responses": 108,
+    "models": 4
+  },
+  "overall": {
+    "visibility_rate": 0.37037037037037035,
+    "recommendation_rate": 0.37037037037037035,
+    "link_rate": 0.2962962962962963,
+    "weighted_visibility": 0.10263157894736848,
+    "brand_mentioned_responses": 14,
+    "brand_recommended_responses": 13,
+    "competitor_mentioned_responses": 88,
+    "competitor_replacement_responses": 88,
+    "competitor_presence_rate": 1.0
+  },
+  "confidence_intervals": {
+    "method_as_stored": "1000-iteration interval; source package labels these confidence intervals",
+    "visibility_rate": {
+      "point": 0.37037037037037035,
+      "low": 0.2222222222222222,
+      "high": 0.5555555555555556,
+      "sample_size": 27
+    },
+    "recommendation_rate": {
+      "point": 0.37037037037037035,
+      "low": 0.2222222222222222,
+      "high": 0.5555555555555556,
+      "sample_size": 27
+    },
+    "link_rate": {
+      "point": 0.2962962962962963,
+      "low": 0.14814814814814814,
+      "high": 0.4444444444444444,
+      "sample_size": 27
+    }
+  },
+  "visibility_by_model": {
+    "OpenAI model": 0.185,
+    "Google model": 0.185,
+    "Anthropic model": 0.0,
+    "Perplexity model": 0.148,
+    "agreement_level": "medium"
+  },
+  "by_query_type": {
+    "urgent": {
+      "n": 16,
+      "visibility_rate": 0.0,
+      "recommendation_rate": 0.0,
+      "link_rate": 0.0
+    },
+    "local": {
+      "n": 16,
+      "visibility_rate": 0.0625,
+      "recommendation_rate": 0.06666666666666667,
+      "link_rate": 0.0625
+    },
+    "problem_based": {
+      "n": 16,
+      "visibility_rate": 0.0,
+      "recommendation_rate": 0.0,
+      "link_rate": 0.0
+    },
+    "category": {
+      "n": 16,
+      "visibility_rate": 0.125,
+      "recommendation_rate": 0.0625,
+      "link_rate": 0.0625
+    },
+    "comparison": {
+      "n": 12,
+      "visibility_rate": 0.16666666666666666,
+      "recommendation_rate": 0.16666666666666666,
+      "link_rate": 0.16666666666666666
+    },
+    "industry_specific": {
+      "n": 16,
+      "visibility_rate": 0.3125,
+      "recommendation_rate": 0.35714285714285715,
+      "link_rate": 0.1875
+    },
+    "service": {
+      "n": 16,
+      "visibility_rate": 0.25,
+      "recommendation_rate": 0.26666666666666666,
+      "link_rate": 0.0625
+    }
+  },
+  "competitors": {
+    "names": "removed",
+    "replacement_labels": [
+      "Competitor A",
+      "Competitor B",
+      "Competitor C"
+    ],
+    "note": "Labels illustrate sanitization only; no per-competitor metric is assigned because identity removal would weaken provenance."
+  }
+}

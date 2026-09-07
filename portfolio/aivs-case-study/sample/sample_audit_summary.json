@@ -1,0 +1,61 @@
+{
+  "schema": "aivs_public_sample_summary/v1",
+  "sample_id": "aivs-production-sample-20260626",
+  "disclosure": "Sanitized from a real production audit. Identifying business information and competitor names were removed; retained numeric engineering metrics are unchanged unless explicitly noted.",
+  "source_run": {
+    "audit_id": "stage_h_product_replay_20260626_202930",
+    "audited_at": "2026-06-26T18:29:44Z",
+    "package_schema": "client_audit_package/v3",
+    "stage_h_manifest_schema": "stage_h_manifest/v2"
+  },
+  "subject": {
+    "public_label": "Client",
+    "market": "Netherlands"
+  },
+  "measurement": {
+    "mode": "strict_production",
+    "measured_languages": [
+      "nl"
+    ],
+    "queries": 27,
+    "models": 4,
+    "expected_responses": 108,
+    "completed_responses": 108,
+    "success_rate": 1.0,
+    "providers": [
+      "OpenAI",
+      "Google",
+      "Anthropic",
+      "Perplexity"
+    ]
+  },
+  "stage_h": {
+    "status": "success",
+    "final_client_artifacts_emitted": true,
+    "source_package_sha256": "sha256:cf5f861e121affc9c924786f50ee2c0d352aa4c8f8f93c1f4742ee6ff6ad5fca",
+    "validated_artifact_languages": [
+      "nl",
+      "ru"
+    ],
+    "presentation_validation": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0
+    },
+    "checklist_validation": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 3
+    },
+    "original_pdf_status": "skipped",
+    "public_pdf_status": "re-rendered sanitized derivative"
+  },
+  "attestation": {
+    "present": true,
+    "algorithm": "Ed25519",
+    "stage_h_signed": false,
+    "verified": false,
+    "reason": "public_key_unavailable_for_public_key_id",
+    "note": "Presence is recorded; cryptographic verification is not claimed."
+  }
+}

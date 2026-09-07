@@ -1,0 +1,14 @@
+{
+  "schema": "aivs_public_claim_verification/v1",
+  "sample_id": "aivs-production-sample-20260626",
+  "disclosure": "Sanitized from a real production audit. Identifying business information and competitor names were removed; retained numeric engineering metrics are unchanged unless explicitly noted.",
+  "summary": {
+    "verified_fact": 58,
+    "supported_interpretation": 22,
+    "hypothesis": 5,
+    "unsupported": 0,
+    "forbidden_claim": 0,
+    "total": 85
+  },
+  "publication_scope": "Aggregate status counts only. Claim text and evidence references were removed because they contain client-specific material."
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "aivs_public_stage_h_validation/v1",
+  "sample_id": "aivs-production-sample-20260626",
+  "disclosure": "Sanitized from a real production audit. Identifying business information and competitor names were removed; retained numeric engineering metrics are unchanged unless explicitly noted.",
+  "source": {
+    "schema": "stage_h_manifest/v2",
+    "status": "success",
+    "final_client_artifacts_emitted": true
+  },
+  "nl": {
+    "presentation": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0
+    },
+    "checklist": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 3
+    }
+  },
+  "ru": {
+    "presentation": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0
+    },
+    "checklist": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 3
+    }
+  },
+  "writer": {
+    "mode": "gemini",
+    "model": "gemini-2.5-pro",
+    "fallback_used": false
+  },
+  "original_pdf_status": {
+    "presentation": "skipped",
+    "checklist": "skipped"
+  }
+}
