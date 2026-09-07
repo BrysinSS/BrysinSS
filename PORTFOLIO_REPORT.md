@@ -107,3 +107,21 @@ Keep Literature Parser linked as the upstream workflow. Promote Declarative Busi
 ## Logical delivery groups
 
 Audit; profile README; AIVS case study; separate project documentation/configuration commits per repository; validation/report; CV drafts. Runtime logs, private data and generated local mapping output are excluded from the delivery commits.
+
+## Publication verification
+
+All 18 delivered files were fetched back from GitHub and matched the prepared UTF-8 content. All 17 external Markdown URLs returned HTTP 200, including the CI badge, which returned SVG showing passing. Local links and internal Markdown anchors passed across 23 reviewed documents; no unbalanced fences or generic template markers remained. GitHub rendered the AIVS eight-stage Mermaid diagram successfully.
+
+Changes were published as separate commits, with this final verification added as a follow-up documentation commit:
+
+| Group | Commit |
+|---|---|
+| Audit | acea84d6bca1eacb942bf33a121cf71ddaaaceb3 |
+| Profile | 6f9099078283767d96678ee428abd3e301491062 |
+| Commercial AIVS case study | 4e68da3efe12048d7b835949b2b93a5ea59c94c4 |
+| Accountant docs and dependency | 52106b32b94003b95ef504f778f5d3f6743c2cca |
+| PDF Hunter docs and contact configuration | 7979680ce7fe078df93d5c4d6749f7e8772fd84e |
+| Literature Parser docs | 345caaa6d941d8bfe5b085dcb8e06d592299c16f |
+| Declarative Business JSON-LD docs | f3fd832d7f09f6cc839e6f63fba4eecb1a3f5adf |
+| Validation report | 2641db0cf7a0ebc415a368d3934253cab292b8fc |
+| CV drafts | 93c3e34e51b735a19ba2a8a99ee84b46e578dd17 |
