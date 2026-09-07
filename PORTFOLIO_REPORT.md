@@ -81,7 +81,7 @@ The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/
 ## 5. Recommended next steps
 
 1. Update any other local clones or external references to `declarative-business-jsonld`; the GitHub rename and the new portfolio links are complete.
-2. Add an approved sanitized AIVS report and test-run summary. This would provide the strongest new engineering evidence.
+2. Keep the sanitized AIVS sample aligned with future production schemas and rerun its security scan before each update.
 3. Implement and test Accountant's validation gate, failure exit codes, period filtering and explicit VAT step in a separate change.
 4. Normalize DOI prefixes at the research workflow boundary; add source-error diagnostics and meaningful PDF resolver tests/CI.
 5. Repair public JSON-LD contracts before promoting it as a runnable pipeline. Review existing client-like data and select licenses deliberately.
@@ -125,3 +125,15 @@ Changes were published as separate commits, with this final verification added a
 | Declarative Business JSON-LD docs | f3fd832d7f09f6cc839e6f63fba4eecb1a3f5adf |
 | Validation report | 2641db0cf7a0ebc415a368d3934253cab292b8fc |
 | CV drafts | 93c3e34e51b735a19ba2a8a99ee84b46e578dd17 |
+
+## AIVS evidence update - 7 September 2026
+
+The earlier placeholder was replaced with a sanitized production sample from one v3/Stage H lineage. The update adds two PDF artifacts, matching HTML, four source-summary JSON files, a SHA-256 manifest, provenance, testing evidence and follow-up notes. It also updates the profile and both CV drafts with the measured run and current suite result.
+
+Validation after assembly checked 16 Markdown, HTML, JSON and PDF text artifacts, every relative Markdown link, five JSON documents, nine manifest hashes and the expected metric invariants. Both PDFs were rendered to PNG and visually inspected. The security scan found no client identifier, local path, email, Dutch phone pattern or secret pattern in the public case-study artifacts.
+
+| Group | Commit |
+|---|---|
+| Sanitized production sample | 9988e9a88ee476be6b66c066263a2a48a6101f71 |
+| Evidence-backed case study | fd310b8d2090786142511c58a5968d3da868697e |
+| Profile and CV results | 1fe33a8c9062c9ce8f001a3fd097133acdb4b2ff |
