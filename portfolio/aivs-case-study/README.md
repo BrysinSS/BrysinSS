@@ -1,76 +1,67 @@
-# AIVS — evidence-backed AI visibility auditing
+# AIVS - evidence-backed AI visibility auditing
 
-An automated audit system combining deterministic extraction and LLM reasoning in an eight-stage pipeline with gated validation and traceable reporting.
+AIVS is a private, commercial eight-stage system that measures how AI services represent a business and turns those observations into validated implementation work.
 
-## Problem
+## Production example
 
-AI visibility audits need a repeatable way to turn source material into findings while preventing claims that lack measurable support. The engineering task is to control the path from extraction to reasoning and reporting.
+The [public sample](sample/README.md) is derived from a real production audit completed on 26 June 2026.
 
-## System overview
+> Sanitized from a real production audit. Identifying business information and competitor names were removed; retained numeric engineering metrics are unchanged unless explicitly noted.
 
-I built AIVS as an eight-stage system. Each stage has specifications, gates and checks. Deterministic extraction handles factual processing; LLM reasoning operates alongside it. Guardrails block claims without measurable foundations.
+| Run fact | Result |
+|---|---|
+| Measurement | 27 Dutch queries × 4 models |
+| Providers | OpenAI, Google, Anthropic, Perplexity |
+| Completion | 108 / 108 valid responses, 100% |
+| Mode | `strict_production` |
+| Visibility | 37.0% (stored interval 22.2%-55.6%) |
+| Recommendation | 37.0% (stored interval 22.2%-55.6%) |
+| Link rate | 29.6% (stored interval 14.8%-44.4%) |
+| Claim control | 58 verified facts, 22 supported interpretations, 5 hypotheses, 0 unsupported, 0 forbidden |
+| Stage H | final artifacts emitted; presentation passed 0/0, checklist passed 0 errors/3 warnings |
 
-This case study describes the **commercial, private AIVS system** using facts explicitly confirmed by its owner. The separate public Declarative Business JSON-LD repository is a different implementation and does not establish the commercial system's test count, signing implementation or paid use.
+These values describe one audit-time model sample. They are evidence about the observed answer set, not customer, revenue or ranking forecasts.
 
-## Eight-stage pipeline
-
-This diagram shows the confirmed stage count and validation pattern. Numbers are conceptual positions, not disclosed internal stage names. Stage names, specific responsibilities and gate criteria are intentionally omitted until an approved public specification is available.
+## System flow
 
 ```mermaid
 flowchart LR
-  I[Audit inputs] --> S1[Stage 1 + gate]
-  S1 --> S2[Stage 2 + gate]
-  S2 --> S3[Stage 3 + gate]
-  S3 --> S4[Stage 4 + gate]
-  S4 --> S5[Stage 5 + gate]
-  S5 --> S6[Stage 6 + gate]
-  S6 --> S7[Stage 7 + gate]
-  S7 --> S8[Stage 8 + gate]
-  S8 --> R[Audit reports]
+  A[Site and market inputs] --> B[Deterministic collection]
+  B --> C[Structured analysis]
+  C --> D[Multi-model measurement]
+  D --> E[Evidence and claim gates]
+  E --> F[Client package]
+  F --> G[Stage H validation]
+  G --> H[Presentation and checklist]
 ```
 
-See [architecture](ARCHITECTURE.md) for responsibility boundaries.
+The implementation has eight stages with explicit contracts and validation gates. Deterministic processing establishes source facts and metrics; LLM components work within structured inputs and outputs. Claim classification distinguishes verified facts, supported interpretations and hypotheses, and blocks unsupported or forbidden wording from the selected delivery.
 
-## Deterministic vs LLM responsibilities
+See [architecture](ARCHITECTURE.md) for responsibility boundaries and [provenance](PROVENANCE.md) for the source-to-public hash chain.
 
-| Responsibility | Confirmed approach |
-|---|---|
-| Extraction | Deterministic processing |
-| Reasoning | LLM reasoning combined with extracted evidence |
-| Validation | Specifications, gates and checks at every stage |
-| Claim control | Guardrails block unsupported claims |
-| Reporting | Six languages supported |
-| Attestation | Ed25519 for reports |
+## Measurement and reporting
 
-## Validation gates and guardrails
+The selected run used Dutch as its only measured language. The product supports client report output in six languages: Russian, English, Finnish, German, Dutch and French. Output-language support does not mean every language was measured in this audit.
 
-Checks exist at every stage, and claim guardrails require measurable foundations. This describes the confirmed control structure; it does not assert unpublished thresholds, retry policies or a specific schema implementation.
+The saved Stage H run produced validated Dutch and Russian HTML. Its original PDF outputs were skipped. The public sample includes newly rendered, sanitized PDF derivatives plus their HTML sources and SHA-256 manifest.
 
-## Traceability and Ed25519 attestation
+## Attestation boundary
 
-Evidence requirements constrain report claims. Ed25519 is used for report attestation. A signature can establish integrity and origin relative to a trusted key; it does not establish the factual correctness of an audit. The signed payload format and verification procedure are not public here. See [security and traceability](SECURITY_AND_TRACEABILITY.md).
+The source package contains an Ed25519 attestation and its canonical package digest recomputes to the value referenced by both Stage H manifests. The signing public key was unavailable, so the signature was not independently verified and Stage H records `signed: false` and `attestation_verified: false`. Attestation presence and verification are stated separately throughout this case study.
 
-## Testing: 4300+
+## Test evidence
 
-The commercial system has **4300+ automated tests**, as confirmed by the owner. This is not a count from the public mapping repository or a test run performed for this portfolio. Coverage percentages and detailed test categories have not been published. See [testing](TESTING.md).
+At private commit `3809ab6ca006d397d58d65d3ea32927a3e0160e1`, pytest collected 4,320 tests. The unrestricted local run on 7 September 2026 completed with **4,308 passed, 12 skipped, 0 failed and 0 errors** in 105.34 seconds. See [testing](TESTING.md).
 
-## Six-language report generation
+## Public evidence
 
-AIVS generates reports in six languages. The language list and translation validation method have not been supplied for this public case study.
+- [Sanitized report package](sample/README.md)
+- [Provenance and run selection](PROVENANCE.md)
+- [Testing record](TESTING.md)
+- [Security and traceability](SECURITY_AND_TRACEABILITY.md)
+- [Known evidence gaps](FOLLOW_UP.md)
 
-## Real-world use
-
-The system has been used for real paid audits. Client names, revenue, audit volume and performance improvements are not disclosed or inferred.
-
-## Example report
-
-**USER_ACTION_REQUIRED: add sanitized example report.**
-
-Existing files in the separate public repository have not been established as sanitized examples of the commercial system. They are not copied here.
-
-## What is intentionally not public
-
-Private source code, client data, prompts, signing keys, commercial decision rules and internal gate specifications. There is no public installation command for the commercial system. This is a documentation-only case study.
+Private source code, client inputs, prompts, credentials, signing keys, model response text and commercial decision rules remain private. This directory is an engineering case study, not a runnable distribution of the commercial system.
 
 ## License
 

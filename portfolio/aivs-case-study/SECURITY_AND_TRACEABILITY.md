@@ -1,25 +1,23 @@
 # AIVS security and traceability
 
-## Confirmed controls
+## Evidence controls
 
-- Specifications, gates and checks at each of eight stages.
-- Guardrails blocking claims without measurable foundations.
-- Ed25519 attestation for reports.
+- Stage contracts and validation gates separate collection, measurement, claim review and client delivery.
+- Claim statuses distinguish verified facts, supported interpretations, hypotheses, unsupported claims and forbidden claims.
+- The selected run's delivery summary contains 0 unsupported and 0 forbidden claims.
+- A canonical package digest links the client package to both saved Stage H manifests.
+- A separate public manifest records SHA-256 values for every sanitized sample artifact.
 
-## Attestation boundary
+## Ed25519 status
 
-A signature verifies a specific payload against a public key. With a trusted key and a defined payload format, it can provide evidence of integrity and origin. It does not prove that a finding is true, that input is complete or that model reasoning is correct. Claim validation remains a separate responsibility.
+The private package contains an Ed25519 attestation block. Presence alone is not verification. Its canonical package digest recomputes, but the corresponding public key was unavailable in the inspected environment. The source run is therefore documented as attestation present, `signed: false` and `attestation_verified: false`.
 
-This material includes no signing keys, verification tool, key-rotation procedure or attestation schema. It makes no claim about those implementation details.
+A valid signature would establish integrity and origin relative to a trusted public key. It would not prove that the crawl was complete, that a model answer was factually correct or that an interpretation was warranted. Those concerns remain with source quality, measurement design and claim validation.
 
-## Traceability boundary
+## Sanitization boundary
 
-The confirmed guardrails require measurable support for claims. No specific storage model, immutable audit log, evidence identifier format or regulatory certification is asserted.
+The public sample removes the client and domain, URLs, phones, emails, addresses, people, response and query text, evidence excerpts, competitor identities, private paths, credentials, prompts, internal rules and signing material. Neutral labels such as `Client` and `Competitor A` are used only where structure needs an example.
 
-## Publication boundary
+Retained numeric metrics come from one v3 run. A later v4 rebuild is excluded. The public PDFs and HTML are sanitized derivatives and have their own public hashes; they do not inherit the private attestation.
 
-Only owner-approved facts are described. Private code, client documents, credentials, signing material, prompts and commercial rules are excluded. A file being present in another public repository does not establish that it is safe or representative of this system.
-
-## Proposed verification artifact
-
-An approved sanitized report with a public verification procedure would let readers inspect attestation without accessing the implementation. This is a proposed next step, not a currently shipped capability of this directory.
+See [provenance](PROVENANCE.md) for the exact digest relationship and [known evidence gaps](FOLLOW_UP.md) for unavailable historical artifacts.
