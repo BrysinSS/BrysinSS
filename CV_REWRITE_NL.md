@@ -24,9 +24,9 @@ Ik bouw automatiseringssystemen met Python, API's, n8n en LLM-integraties. Mijn 
 
 ### AI Accountant Orchestra — transactieverwerking in Python
 
-- Een deterministische uitvoeringsengine voor YAML-recepten gebouwd, met CSV-normalisatie, samenvattingen, JSON- en Markdown-uitvoer en NDJSON-logs per stap.
-- Functies voor btw-berekening en vereenvoudigd KOR-gedrag geïmplementeerd. Acht bestaande pytest-tests controleren onderdelen van het inlezen, groeperen en berekenen.
-- GitHub Actions ingesteld voor tests en de beperkingen van het meegeleverde samenvattingsrecept en de validatie gedocumenteerd.
+- Een deterministische, YAML-gestuurde Python-pipeline voor transacties gebouwd, met bronvalidatie, normalisatie, inclusieve filtering op kalenderkwartaal (`Qn-YYYY`), samenvattingen en een geconfigureerde btw-berekeningsdemonstratie.
+- JSON- en Markdown-artefacten en geordende NDJSON-staplogs opgeleverd, met fail-fast-afhandeling van verplichte validatie, zichtbare foutartefacten en CLI-exitcodes voor succes, ongeldige invoer en uitvoeringsfouten.
+- 37 geslaagde pytest-tests geverifieerd, inclusief end-to-end-scenario's voor succes en fouten; GitHub Actions voert de suite uit met Python 3.11 en 3.12.
 
 ### Onderzoeksautomatisering — Literature Parser en PDF Hunter
 

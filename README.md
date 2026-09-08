@@ -25,15 +25,15 @@ Make input and output contracts explicit. Separate deterministic processing from
 
 **Evidence:** [Commercial system case study](portfolio/aivs-case-study/README.md), [sanitized production sample](portfolio/aivs-case-study/sample/README.md), [provenance](portfolio/aivs-case-study/PROVENANCE.md), [architecture](portfolio/aivs-case-study/ARCHITECTURE.md) and [testing](portfolio/aivs-case-study/TESTING.md). The implementation remains private; the public package exposes sanitized metrics, validation outcomes and hashes.
 
-### AI Accountant Orchestra — configurable transaction processing
+### AI Accountant Orchestra — deterministic transaction workflow
 
 **Problem:** Make CSV transaction processing repeatable and inspectable.
 
-**What I built:** A Python recipe engine that loads, normalizes and summarizes transactions through YAML-defined steps.
+**What I built:** A deterministic, YAML-driven Python workflow that validates and normalizes CSV transactions, filters an inclusive `Qn-YYYY` calendar quarter, summarizes the selected rows and applies configured rates as a VAT calculation demonstration.
 
-**Engineering highlights:** NDJSON logs, JSON/Markdown artifacts, separately tested VAT/BTW and simplified KOR calculations, pytest and GitHub Actions. The bundled BTW recipe is a summary demo with fixed tax metadata.
+**Engineering highlights:** JSON/Markdown artifacts and ordered NDJSON step logs; mandatory validation failures stop dependent work; CLI exit codes distinguish success, invalid input and execution failure. The suite has 37 passing pytest tests, including successful and failing end-to-end scenarios, and GitHub Actions runs on Python 3.11 and 3.12.
 
-**Evidence:** [Project and quick start](https://github.com/BrysinSS/ai-accountant-orchestra), [tests](https://github.com/BrysinSS/ai-accountant-orchestra/tree/main/tests), [CI](https://github.com/BrysinSS/ai-accountant-orchestra/actions/workflows/ci.yml).
+**Evidence:** [Repository](https://github.com/BrysinSS/ai-accountant-orchestra), [README](https://github.com/BrysinSS/ai-accountant-orchestra#readme), [tests](https://github.com/BrysinSS/ai-accountant-orchestra/tree/main/tests), [engineering evidence](https://github.com/BrysinSS/ai-accountant-orchestra/blob/main/docs/ENGINEERING_EVIDENCE.md) and [GitHub Actions](https://github.com/BrysinSS/ai-accountant-orchestra/actions/workflows/ci.yml).
 
 ### PDF Hunter — open-access PDF resolution
 

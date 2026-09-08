@@ -1,12 +1,12 @@
 # Portfolio engineering report
 
-Prepared on 7 September 2026. Public documentation is in English; the requested Dutch CV draft is the language-specific exception. No private repository was accessed or copied.
+Prepared on 7 September 2026 and updated with verified Accountant evidence on 8 September 2026. Public documentation is in English; the requested Dutch CV draft is the language-specific exception. No private repository was accessed or copied.
 
 ## 1. What was wrong
 
 [AUDIT.md](AUDIT.md) records the pre-change findings and source paths. The critical issues were broken installation/badge Markdown, a missing CLI dependency, tax-recipe claims exceeding actual behavior, incorrect n8n paths, weak evidence links, and ambiguity between commercial AIVS and an incomplete public mapping project.
 
-The review also found unclosed fences and misleading execution diagrams in three Accountant guides. Existing generated files and IDE/bytecode artifacts obscure several repositories.
+The original review also found unclosed fences and misleading execution diagrams in three Accountant guides. Those documentation issues and the later workflow defects are resolved on the current Accountant `main`; existing generated files and IDE/bytecode artifacts remain historical findings for several repositories.
 
 ## 2. What was changed
 
@@ -29,21 +29,21 @@ The only executable source change is optional Unpaywall configuration. Tax calcu
 
 | Check | Result |
 |---|---|
-| Accountant dependency installation | Original pinned requirements plus rich installed in an isolated Python 3.12.14 environment |
-| Accountant existing tests | **8 passed**; no test changes. Initial sandbox temp-directory failures were resolved by using a prepared temporary directory outside the sandboxed execution |
-| Accountant load recipe | CLI imports correctly; status OK; normalized DataFrame shape 10 x 5 |
-| Accountant summary recipe | Generated JSON/Markdown and NDJSON logs; actual summary values reproduced. Validation result is false while overall status is OK |
+| Accountant tests | **37 collected, 37 passed, 0 skipped and 0 failed** on the current checkout; the suite includes controller, CLI and end-to-end success/failure coverage |
+| Accountant successful workflow | `Q3-2024` returned exit 0 after validating 10 raw rows, selecting 4 rows, and producing gross 5.90, VAT demonstration 0.49 and net 5.41 with JSON/Markdown artifacts and an eight-step NDJSON log |
+| Accountant failure workflow | `Q2-2023` returned exit 1 at `filter_period`, wrote failure JSON/NDJSON evidence and did not run summary, VAT or export steps |
+| Accountant hosted CI | Latest run [34166472560](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/34166472560) passed on commit `637ee46e5e8f536c21cb0619c958a0415e537a06`; both `test (3.11)` and `test (3.12)` succeeded |
 | Public JSON-LD existing test | **Collection error**: missing run_pipeline export in boundary module. Unchanged |
 | Public JSON-LD direct mapper | Standard-library command completed successfully; JSON-LD artifact generated locally |
 | PDF Hunter offline checks | 196 input records loaded; priority, empty results, failure isolation, optional email, query encoding, no HTTP without email and one-record mocked JSON-to-CSV path passed |
 | PDF Hunter existing suite / CI | Neither exists; offline checks are not presented as an existing suite |
 | n8n | JSON parsed; all 11 node references resolve; all six embedded JavaScript code nodes pass syntax compilation. Full n8n execution not performed |
 | Python | All source files parsed with ast.parse |
-| GitHub Actions YAML | Parsed statically; main push/PR triggers, Python 3.11, dependency install and pytest step inspected |
+| GitHub Actions YAML | Parsed statically; main push/PR triggers, Python 3.11 and 3.12 matrix, dependency install and pytest step inspected |
 | Markdown | Local file links and internal anchors checked across tracked Markdown and new profile files; malformed guide fences corrected |
 | Placeholder scan | No generic template markers remain in the reviewed portfolio Markdown. Existing implementation stubs in project code remain explicitly documented |
 
-The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/19346772591) succeeded on 13 November 2025. After this update, hosted CI also **passed** for commit `52106b32b94003b95ef504f778f5d3f6743c2cca`: [run 34140230539](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/34140230539).
+The latest hosted Accountant CI checked on 8 September 2026 **passed** for commit `637ee46e5e8f536c21cb0619c958a0415e537a06`: [run 34166472560](https://github.com/BrysinSS/ai-accountant-orchestra/actions/runs/34166472560). Both matrix jobs, Python 3.11 and 3.12, completed successfully.
 
 ### Source revisions audited
 
@@ -57,7 +57,6 @@ The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/
 
 ## 3. Remaining risks
 
-- Accountant's BTW recipe neither calculates VAT nor filters the requested period. Validation does not enforce failure, and CLI status/exit-code semantics are weak. These need a separate behavioral change with meaningful integration tests.
 - PDF Hunter conflates unavailable PDFs with request failures, retains DOI URL prefixes and lacks retry/backoff, detailed error logs, pinned dependencies and CI. Its live five-source batch was not run.
 - n8n retains DOI URL prefixes, uses array-index topic pairing and first-record metadata, lacks pagination and has no verified runtime version. Live API access is unverified; the export's lack of credentials does not prove providers need none. See [Crossref access documentation](https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication/) and [OpenAlex access reference](https://help.openalex.org/access/).
 - Public JSON-LD has broken boundary contracts, incomplete orchestration and no full dependency manifest, CI or demonstrated schema.org validator.
@@ -82,16 +81,16 @@ The baseline Accountant hosted CI run [19346772591](https://github.com/BrysinSS/
 
 1. Update any other local clones or external references to `declarative-business-jsonld`; the GitHub rename and the new portfolio links are complete.
 2. Keep the sanitized AIVS sample aligned with future production schemas and rerun its security scan before each update.
-3. Implement and test Accountant's validation gate, failure exit codes, period filtering and explicit VAT step in a separate change.
+3. Keep Accountant evidence synchronized with its verified workflow, 37-test suite and Python 3.11/3.12 hosted CI; retain the VAT-demonstration and non-LLM limitations.
 4. Normalize DOI prefixes at the research workflow boundary; add source-error diagnostics and meaningful PDF resolver tests/CI.
 5. Repair public JSON-LD contracts before promoting it as a runnable pipeline. Review existing client-like data and select licenses deliberately.
 6. Complete CV contact, chronology, education and language fields from confirmed facts.
 
-Suggested repository descriptions and topics (not applied automatically):
+Repository descriptions and topics reviewed on 8 September 2026 (the Accountant metadata update is applied; the other rows remain suggestions):
 
 | Repository | Description | Topics |
 |---|---|---|
-| ai-accountant-orchestra | YAML-driven Python transaction processing with NDJSON logs, VAT calculation functions, pytest and CI | python, automation, yaml, pytest, github-actions |
+| ai-accountant-orchestra | YAML-driven Python transaction pipeline with validation, quarter filtering, VAT calculation demo, pytest and CI. | python, automation, data-engineering, yaml, pytest, github-actions, orchestration, transaction-processing, vat, portfolio-project |
 | pdf-hunter-python | Resolve open-access PDF links through official APIs and document endpoints with explicit source priority | python, api, open-access, research-automation |
 | literature-parser-n8n | n8n workflow for Crossref/OpenAlex metadata collection, normalization and article export | n8n, crossref, openalex, data-pipeline |
 | declarative-business-jsonld | Map declared business fields to JSON-LD with explicit Python transformations | python, json-ld, structured-data, data-mapping |

@@ -1,19 +1,13 @@
 # Portfolio audit
 
-Audit date: 7 September 2026. Scope: the default branches of the five repositories below, inspected before editing. All five are public. No private repository was accessed. Evidence paths refer to the original checkout; validation results and source revisions are recorded in PORTFOLIO_REPORT.md.
+Audit date: 7 September 2026, with an Accountant follow-up verified on 8 September 2026. Scope: the default branches of the five repositories below, inspected before editing. All five are public. No private repository was accessed. Evidence paths for unresolved findings refer to the original checkout; Accountant remediation and current validation results are recorded in PORTFOLIO_REPORT.md.
 
 P0: undermines trust. P1: materially weakens the portfolio. P2: useful improvement.
 
 | Issue | Repository | Severity | Evidence | Recommended fix |
 |---|---|---|---|---|
 | Profile omits name, featured case evidence, background and contact link | BrysinSS | P1 | README.md is a short list without clickable project links | Lead with role and link each case to inspectable evidence |
-| Invalid CI badge, clone placeholder and unclosed installation fence | ai-accountant-orchestra | P0 | README.md:2,59; opening bash fence never closed | Correct URL and write executable, separate commands |
-| CLI dependency absent from installation manifest | ai-accountant-orchestra | P0 | ui/cli.py imports rich; requirements.txt omits it; main.py fallback can return OK without business execution | Add rich and verify real CLI import and recipe artifacts |
-| BTW recipe does not calculate VAT or filter transactions by period | ai-accountant-orchestra | P0 | recipes/btw_return.yml calls summarize, hardcodes kor_applied and zero vat_breakdown; no compute_vat step | Describe it as a summary demonstration; document separately tested VAT/KOR functions |
-| Validation report does not enforce a gate | ai-accountant-orchestra | P1 | tools/validation/schema.py returns valid/errors; controller does not interpret valid=false | Explain current validation boundary; plan a separate behavior change |
-| Agent step is a no-op and natural-language parsing uses regex | ai-accountant-orchestra | P1 | orchestrator/controller.py agent branch; agents/accountant_agent.py | Avoid claiming implemented LLM accounting or autonomous agents |
-| Exit code alone does not establish success | ai-accountant-orchestra | P1 | ui/cli.py returns 0 after printing a result; main.py fallback returns 0 | Tell readers to inspect result status, logs and artifacts |
-| Existing tests cover selected functions, not end-to-end accounting | ai-accountant-orchestra | P1 | tests/test_loader.py, test_bookkeeping.py, test_tax.py contain eight tests | State exact coverage; link CI rather than claiming a full suite |
+| Accountant remediation verified | ai-accountant-orchestra | Resolved | Current `main` validates and normalizes raw CSV, filters `Qn-YYYY`, summarizes selected rows, runs a VAT calculation demonstration, writes JSON/Markdown and NDJSON artifacts, fails mandatory invalid validation, and maps CLI outcomes to explicit exit codes. The 37-test suite includes end-to-end success/failure scenarios; hosted CI passes on Python 3.11 and 3.12. | Keep claims bounded by the documented limitations; do not describe an LLM agent, tax-compliant product or production accounting system. |
 | Source list omits Zenodo; not every adapter calls an API | pdf-hunter-python | P1 | src/pdf_hunter.py; arXiv/HAL adapters use HEAD against document endpoints | List five sources and distinguish API calls from document checks |
 | Reproducibility claim needs an upstream-data boundary | pdf-hunter-python | P1 | merge_logic.py has fixed priority; fetchers use live HTTP | Describe deterministic selection for fixed responses |
 | Failures are indistinguishable from missing PDFs | pdf-hunter-python | P1 | fetchers catch exceptions; merge_logic.py returns not found | Document failure behavior and lack of diagnostics/retries |

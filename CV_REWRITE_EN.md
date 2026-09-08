@@ -24,9 +24,9 @@ I build automation systems using Python, APIs, n8n and LLM integrations, with an
 
 ### AI Accountant Orchestra — Python transaction processing
 
-- Built a YAML-driven deterministic recipe engine with CSV normalization, summaries, JSON/Markdown artifacts and NDJSON step logs.
-- Implemented VAT/BTW and simplified KOR calculation functions, with eight existing pytest tests covering selected loading, grouping and tax behavior.
-- Configured GitHub Actions to run tests. Documented the limits of the bundled summary recipe and validation behavior.
+- Built a deterministic, YAML-driven Python transaction pipeline with source validation, normalization, inclusive `Qn-YYYY` calendar-quarter filtering, summaries and a configured VAT calculation demonstration.
+- Produced JSON/Markdown artifacts and ordered NDJSON step logs, with fail-fast mandatory validation, visible failure artifacts and CLI exit codes for success, invalid input and execution failure.
+- Verified 37 passing pytest tests, including end-to-end success and failure scenarios; GitHub Actions runs the suite on Python 3.11 and 3.12.
 
 ### Research automation — Literature Parser and PDF Hunter
 
